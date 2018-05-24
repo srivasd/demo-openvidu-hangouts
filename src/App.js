@@ -1,55 +1,3 @@
-# Openvidu Hangouts React
-
-**OpenviduReact** is a room videoconference component library for [React](https://reactjs.org/).
-
-It's written in [JavaScript](https://www.javascript.com/).
-
-To be able to work in the browser, OpenviduReact uses [openvidu-browser][openvidu-browser] to communicate with the [OpenVidu Server][openvidu-server].
-
-To use AngularOpenVidu, [WebRTC](https://en.wikipedia.org/wiki/WebRTC) support is required (Chrome, Firefox, Opera).
-
-### Table of contents
-
-- [App Demo](#app-demo)
-- [Features](#features)
-- [Installation](#installation)
-
-### App Demo
-
-<p align="center">
-   <img src="images/loginhangouts.png" alt="screencast">
-</p>
-
-<p align="center">
-   <img src="images/videocallhangouts.png" alt="screencast">
-</p>
-
-In this demo you will see a use case of `openvidu-hangouts-react`, where you can test ALL the features included in this component.
-
-
-### Features
-
-- Join a group call
-- Close group call
-- Disable camera
-- Mute microphone
-- Toggle fullscreen video
-
-### Installation
-
-1. Install `openvidu-hangouts-react` node module through npm:
-
-`npm i openvidu-hangouts-react --save` or `yarn add openvidu-hangouts-react `
-
-2. Also you have to install some dependencies in order to import material library correctly:
-
-`npm i @material-ui/core --save-dev`
-
-`npm i @material-ui/icons --save-dev`
-
-3. Import `OpenviduReact` to your App.js and use it in this way:
-
-````
 import React, { Component } from 'react';
 import './App.css';
 import Card from '@material-ui/core/Card';
@@ -145,17 +93,3 @@ import 'openvidu-hangouts-react/build/index.css';
   }
 
 export default App;
-````
-
-| Name | Type | Optional | Description |
-|---|---|---|---|
-| `wsUrl`			| `String` | required | Websocket URL pointing to your [OpenVidu Server][openvidu-server] |
-| `sessionId`		| `String` | required | An id for the session you want to join to |
-| `participantId`	| `String` | required | An id for the current participant joining the session |
-| `updateLogin`	| `function` | required | Function to toggle between session states |
-| `ref`	| `fucntion` | required | Refers the child component OpenviduReact in order to init session |
-
-
-3. Deploy OpenVidu Server
-
-Follow the instructions in [this page](http://openvidu.io/docs/reference-docs/openvidu-artifacts/) to deploy it with docker.
