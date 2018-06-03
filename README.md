@@ -1,10 +1,10 @@
-# Openvidu Hangouts React
+# Openvidu Hangouts React Demo
 
-**OpenviduReact** is a room videoconference component library for [React](https://reactjs.org/).
+**OpenviduHangoutsReact** is a room videoconference component library for [React](https://reactjs.org/).
 
 It's written in [JavaScript](https://www.javascript.com/).
 
-To be able to work in the browser, OpenviduReact uses [openvidu-browser][openvidu-browser] to communicate with the [OpenVidu Server][openvidu-server].
+To be able to work in the browser, OpenviduReact uses [openvidu-browser][https://github.com/OpenVidu/openvidu/tree/master/openvidu-browser] to communicate with the [OpenVidu Server][https://github.com/OpenVidu/openvidu/tree/master/openvidu-server].
 
 To use AngularOpenVidu, [WebRTC](https://en.wikipedia.org/wiki/WebRTC) support is required (Chrome, Firefox, Opera).
 
@@ -21,7 +21,7 @@ To use AngularOpenVidu, [WebRTC](https://en.wikipedia.org/wiki/WebRTC) support i
 </p>
 
 <p align="center">
-   <img src="images/videocallhangouts.png" alt="screencast">
+   <img src="images/openvidudemo.png" alt="screencast">
 </p>
 
 In this demo you will see a use case of `openvidu-hangouts-react`, where you can test ALL the features included in this component.
@@ -34,6 +34,7 @@ In this demo you will see a use case of `openvidu-hangouts-react`, where you can
 - Disable camera
 - Mute microphone
 - Toggle fullscreen video
+- Send messages with a chat
 
 ### Installation
 
@@ -51,6 +52,7 @@ In this demo you will see a use case of `openvidu-hangouts-react`, where you can
 
 ````
 import React, { Component } from 'react';
+import OpenviduReact from '../lib';
 import './App.css';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -60,8 +62,6 @@ import Button from '@material-ui/core/Button';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import OpenviduReact from 'openvidu-hangouts-react';
-import 'openvidu-hangouts-react/build/index.css';
 
   class App extends Component {
 
@@ -138,7 +138,9 @@ import 'openvidu-hangouts-react/build/index.css';
           </Card>
           </div>
         </div> : null }
+        <div id="videoCallContainer">
           <OpenviduReact updateLogin = {this.updateShowLogin} ref={this.child} wsUrl={"localhost"} sessionId={valueSessionId} participantId={valueUserName}/>
+        </div>
         </div>
       );
     }
@@ -156,6 +158,12 @@ export default App;
 | `ref`	| `fucntion` | required | Refers the child component OpenviduReact in order to init session |
 
 
-3. Deploy OpenVidu Server
+4. Run the following commands to start the app:
+
+  `npm install`
+
+  `npm start`
+
+5. Deploy OpenVidu Server
 
 Follow the instructions in [this page](http://openvidu.io/docs/reference-docs/openvidu-artifacts/) to deploy it with docker.
