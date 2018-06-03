@@ -38,7 +38,7 @@ driver.navigate().to('localhost:3000')
     .then(() => driver.sleep(1000))
     .then(() => driver.findElement(By.css('#sessionId')).sendKeys("Sesion 1"))
     .then(() => driver.findElement(By.css('#join-button')).click())
-    .then(() => driver2.sleep(1000))
+    .then(() => driver.sleep(1000))
     //Iniciamos sesion con el segundo participante
     .then(() => driver2.findElement(By.css('#userName')).clear())
     .then(() => driver2.sleep(1000))
@@ -46,7 +46,7 @@ driver.navigate().to('localhost:3000')
     .then(() => driver2.findElement(By.css('#sessionId')).clear())
     .then(() => driver2.findElement(By.css('#sessionId')).sendKeys("Sesion 1"))
     .then(() => driver2.findElement(By.css('#join-button')).click())
-    .then(() => driver.sleep(5000))
+    .then(() => driver2.sleep(2000))
     //Enviamos un mensaje con el primer participante
     .then(() => driver.findElement(By.css('#chatbutton')).click())
     .then(() => driver.sleep(1000))
@@ -59,8 +59,11 @@ driver.navigate().to('localhost:3000')
     //Comprobamos que es bien recibido por el segundo participante
     .then(() => driver2.findElement(By.css('#chatbutton')).click())
     .then(() => driver2.sleep(1000))
-    .then(() => driver.findElement(By.css('.messagecontent')).getText())
-    .then((value) => console.log("Recibido el mensaje: " + value))
+    .then(() => driver2.findElement(By.css('.username')).getText())
+    .then((value) => {
+        var str = value.split(": ");
+        console.log("Recibido el mensaje: " + str[1]);
+    })
     .then(() => driver2.findElement(By.css('.closebtn')).click())
     .then(() => driver2.sleep(1000))
     //Salimos de la llamada
