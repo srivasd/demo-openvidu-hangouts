@@ -30,4 +30,5 @@ driver.navigate().to('localhost:3000')
     .then(() => driver.sleep(1000))
     .then(() => driver.findElement(By.css('#callendbutton')).click())
     .then(() => driver.sleep(1000))
+    .then(() => console.log("Funciona correctamente"))
     .then(() => driver.quit());
