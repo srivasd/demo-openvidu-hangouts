@@ -86,7 +86,9 @@ import 'openvidu-hangouts-react/build/index.css';
           </Card>
           </div>
         </div> : null }
+        <div id="videoCallContainer">
           <OpenviduReact updateLogin = {this.updateShowLogin} ref={this.child} wsUrl={"localhost"} sessionId={valueSessionId} participantId={valueUserName}/>
+        </div>
         </div>
       );
     }

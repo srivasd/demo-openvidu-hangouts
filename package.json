@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "openvidu-hangouts-react": "^1.1.6",
+    "openvidu-hangouts-react": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@material-ui/core": "^1.1.0",
-    "@material-ui/icons": "^1.1.0"
+    "@material-ui/icons": "^1.1.0",
+    "chromedriver": "^2.38.3",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
